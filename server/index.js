@@ -3,6 +3,7 @@ const express = require("express");
 const massive = require("massive");
 // const session = require("express-session");
 // const ctrl = require("./controller");
+const authCtrl = require("./authController");
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -33,3 +34,9 @@ massive({
   );
   console.log("Database Connected");
 });
+
+// Auth endpoints
+app.post(`/auth/register`, authCtrl.register);
+app.post(`/auth/login`, authCtrl.login);
+
+// post endpoints
