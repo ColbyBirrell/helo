@@ -6,7 +6,7 @@ module.exports = {
     // const { session } = req;
     const db = req.app.get("db");
 
-    const salt = bcrypt.genSaltSync(20);
+    const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
     let newUser = await db.register_user({ username, hash });
@@ -32,7 +32,7 @@ module.exports = {
     if (authenticated) {
       delete user.password;
       // session.user = user;
-      console.log(user);
+      //   console.log(user);
       res.status(202).send(user);
     } else {
       res.status(401).send("Incorrect Password");

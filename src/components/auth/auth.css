@@ -1,0 +1,16 @@
+.auth-box {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: darkslategray 5px;
+  box-shadow: darkslategray 5px 5px 5px 5px;
+  background: rgb(238, 211, 174);
+  background: radial-gradient(
+    circle,
+    rgba(238, 211, 174, 0.835171568627451) 25%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}

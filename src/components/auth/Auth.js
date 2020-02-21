@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
+import { getUser } from "../../ducks/reducer";
+import "./auth.css";
 
-export default class Auth extends Component {
+class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      profile_pic: ""
     };
   }
 
@@ -22,7 +26,7 @@ export default class Auth extends Component {
     axios
       .post(`/auth/register`, { username: username, password: password })
       .then(res => {
-        //may need redux?
+        this.props.getUser(res.data);
         this.props.history.push("/dashboard");
       });
   };
@@ -32,7 +36,7 @@ export default class Auth extends Component {
     axios
       .post(`/auth/login`, { username: username, password: password })
       .then(res => {
-        //may need redux
+        this.props.getUser(res.data);
         this.props.history.push("/dashboard");
       })
       .catch(err => console.log(err));
@@ -40,9 +44,9 @@ export default class Auth extends Component {
 
   render() {
     return (
-      <div>
+      <div className="auth-box">
+        <h1>HeLo</h1>
         <div className="user-pass-inputs">
-          Auth.js
           <input
             name="username"
             placeholder="Enter username"
@@ -62,3 +66,5 @@ export default class Auth extends Component {
     );
   }
 }
+
+export default connect(null, { getUser })(Auth);
