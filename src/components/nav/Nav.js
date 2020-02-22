@@ -15,7 +15,9 @@ class Nav extends Component {
             backgroundImage: `url('${this.props.user.profile_pic}')`
           }}
         ></div>
-        <div className="username">{this.props.user.username}</div>
+        <div className="username">
+          <h3>{this.props.user.username}</h3>
+        </div>
         <Link to="/dashboard">
           <button>Home</button>
         </Link>
