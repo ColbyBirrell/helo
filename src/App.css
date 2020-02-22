@@ -10,12 +10,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(180, 58, 155);
+  /* background: rgb(180, 58, 155);
   background: linear-gradient(
     90deg,
     rgba(180, 58, 155, 1) 0%,
     rgba(244, 253, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
-  );
+  ); */
   /* text-align: center; */
+  background: rgb(112, 255, 0);
+  background: linear-gradient(
+    225deg,
+    rgba(112, 255, 0, 1) 0%,
+    rgba(7, 58, 240, 1) 43%,
+    rgba(255, 0, 0, 1) 100%
+  );
 }

@@ -6,18 +6,21 @@ import Nav from "./components/nav/Nav";
 // import Form from "./components/form/Form";
 // import Post from "./components/post/Post";
 import routes from "./routes";
+import { withRouter } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <Nav />
-      {routes}
-      {/* <Auth />
-      <Dashboard />
-      <Form />
-      <Post /> */}
+      {props.location.pathname === "/" ? (
+        <>{routes}</>
+      ) : (
+        <>
+          <Nav />
+          {routes}
+        </>
+      )}
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
