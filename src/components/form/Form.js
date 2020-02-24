@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import axios from "axios";
 
-export default class Form extends Component {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +16,17 @@ export default class Form extends Component {
       [event.target.name]: event.target.value
     });
   };
+
+  // submitNewPost = () => {
+  //   axios.post(`/api/posts`, {
+  //     title: this.state.postTitle,
+  //     content: this.state.postText,
+  //     author_id: this.props.user.id
+  //   })
+  //   .then((res) => {res.status(200).send()
+
+  //   })
+  // };
 
   render() {
     return (
@@ -33,3 +46,12 @@ export default class Form extends Component {
     );
   }
 }
+
+const mapStateToProps = reduxState => {
+  const { user } = reduxState;
+  return {
+    user
+  };
+};
+
+export default connect(mapStateToProps)(Form);

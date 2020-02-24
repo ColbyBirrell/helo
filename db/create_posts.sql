@@ -7,5 +7,5 @@ INSERT INTO posts
 )
 VALUES
 (
-    $1, $2, $3, $4
+    ${title}, ${img}, ${content}, ${author_id}
 );
