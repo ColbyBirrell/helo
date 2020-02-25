@@ -4,6 +4,7 @@ const massive = require("massive");
 // const session = require("express-session");
 const ctrl = require("./controller");
 const authCtrl = require("./authController");
+const gradient = require("gradient-string");
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -30,9 +31,9 @@ massive({
   const port = SERVER_PORT;
   app.set("db", db);
   app.listen(port || 4000, () =>
-    console.log(`<---Server running on ${SERVER_PORT}--->`)
+    console.log(gradient.rainbow(`<---Unicorns running on ${SERVER_PORT}--->`))
   );
-  console.log("Database Connected");
+  console.log(gradient.instagram("Database Connected"));
 });
 
 // Auth endpoints
@@ -41,4 +42,4 @@ app.post(`/auth/login`, authCtrl.login);
 
 // post endpoints
 app.get(`/api/posts`, ctrl.getPosts);
-app.post(`/api/posts/:id`, ctrl.createPost);
+app.post(`/api/posts`, ctrl.createPost);

@@ -14,7 +14,7 @@ module.exports = {
     const { title, img, content, author_id } = req.body;
     const db = req.app.get("db");
 
-    await db.create_post({ title, img, content, author_id });
+    await db.create_posts({ title, img, content, author_id });
     res.status(200).send("post created successfully");
   }
 };

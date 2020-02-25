@@ -9,3 +9,4 @@ VALUES
 (
     ${title}, ${img}, ${content}, ${author_id}
 );
+

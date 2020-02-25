@@ -15,15 +15,25 @@ export default class Dashboard extends Component {
     this.getPosts();
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevProps.history !== this.props.history) {
+  //     this.getPosts();
+  //   }
+  // }
+
   getPosts = (req, res) => {
-    axios.get(`/api/posts`).then(res => {
-      this.setState({
-        postList: res.data
-      });
-    });
+    axios
+      .get(`/api/posts`)
+      .then(res => {
+        this.setState({
+          postList: res.data
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
+    // console.log(this.props);
     const showAllPosts = this.state.postList.map(element => {
       return <Post key={element.id} post={element} />;
     });

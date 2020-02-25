@@ -8,11 +8,12 @@ export default class Post extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="post-main">
+        <img className="img-thumb" src={this.props.post.img} />
         <div className="post-title">{this.props.post.title}</div>
-        <div className="post-content">{this.props.post.content}</div>
+        <div className="post-content">{this.props.post.author_id}</div>
       </div>
     );
   }

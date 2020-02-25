@@ -25,4 +25,6 @@
     rgba(7, 58, 240, 1) 43%,
     rgba(255, 0, 0, 1) 100%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
