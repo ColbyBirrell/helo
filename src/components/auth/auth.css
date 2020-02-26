@@ -8,8 +8,8 @@
 }
 
 .auth-box {
-  height: 50%;
-  width: 50%;
+  height: 500px;
+  width: 500px;
   font-size: 2rem;
   display: flex;
   flex-direction: column;

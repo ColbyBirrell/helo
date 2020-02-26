@@ -13,7 +13,7 @@ export default class Post extends Component {
       <div className="post-main">
         <img className="img-thumb" src={this.props.post.img} alt="thumb" />
         <div className="post-title">{this.props.post.title}</div>
-        <div className="post-content">{this.props.post.author_id}</div>
+        <div className="post-content">{this.props.post.content}</div>
         <div className="Delete Post">
           <button
             onClick={() => {

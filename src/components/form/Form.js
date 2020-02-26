@@ -12,7 +12,7 @@ class Form extends Component {
       postTitle: "",
       postText: "",
       img:
-        "https://lh3.googleusercontent.com/proxy/KQX0tge9tb76XBH5unwPSF0yRnfPKsR0oVA77f1ZQBbf73OJRY2aEcVvFyN60kcnLa40w41xBRHVfGAJAGQt2CsFd5sjh6KzNi62C-kAu9a_sdjjvtdcxxisg3PBA8wZmQcfHjVW"
+        "https://lh3.googleusercontent.com/proxy/sO8BzGa5CYvCckXozofv4cwyKfpmp6nt5xNPTXOAMeFh3haNnH485M4LDMG83QYxgNQN7T9FABencIFknLI"
     };
   }
 
@@ -50,7 +50,7 @@ class Form extends Component {
       <div className="form-body">
         <div className="form-main">
           Create a New Post
-          <img className="img-form" src={this.state.img} alt="imgprev" />
+          <img className="img-form" src={this.state.img} />
           <div className="form-inputs">
             <input
               name="postTitle"
