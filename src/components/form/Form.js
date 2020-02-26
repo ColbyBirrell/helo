@@ -39,7 +39,7 @@ class Form extends Component {
         author_id: this.props.user.id
       })
       .then(res => {
-        res.status(200).send(this.getPosts());
+        res.status(200).send(() => this.getPosts());
       })
       .catch(err => console.log(err));
   };
@@ -50,34 +50,30 @@ class Form extends Component {
       <div className="form-body">
         <div className="form-main">
           Create a New Post
-          {/* <div
-            className="form-img"
-            style={{
-              backgroundImage: `url ('${this.state.img}')`
-            }}
-          ></div> */}
-          <img className="img-form" src={this.state.img} />
-          <input
-            name="postTitle"
-            placeholder="Enter Post Title"
-            onChange={this.handleInput}
-          />
-          <input
-            name="postText"
-            placeholder="Enter Post Text"
-            onChange={this.handleInput}
-          />
-          <input
-            name="img"
-            placeholder="Enter img URL"
-            onChange={this.handleInput}
-          />
-        </div>
-        <div className="form-butts">
-          <Link to="/dashboard">
-            <button onClick={this.submitNewPost}>Save</button>
-          </Link>
-          <button>Cancel</button>
+          <img className="img-form" src={this.state.img} alt="imgprev" />
+          <div className="form-inputs">
+            <input
+              name="postTitle"
+              placeholder="Enter Post Title"
+              onChange={this.handleInput}
+            />
+            <textarea
+              name="postText"
+              placeholder="Enter Post Text"
+              onChange={this.handleInput}
+            />
+            <input
+              name="img"
+              placeholder="Enter img URL"
+              onChange={this.handleInput}
+            />
+          </div>
+          <div className="form-butts">
+            <Link to="/dashboard">
+              <button onClick={this.submitNewPost}>Save</button>
+            </Link>
+            <button>Cancel</button>
+          </div>
         </div>
       </div>
     );

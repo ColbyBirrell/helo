@@ -16,5 +16,13 @@ module.exports = {
 
     await db.create_posts({ title, img, content, author_id });
     res.status(200).send("post created successfully");
+  },
+
+  deletePost: async (req, res) => {
+    const { id } = req.params;
+    const db = req.app.get("db");
+
+    await db.delete_posts([id]);
+    res.status(200).send("deleted successfully");
   }
 };

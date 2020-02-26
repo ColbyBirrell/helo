@@ -10,11 +10,13 @@
 .auth-box {
   height: 50%;
   width: 50%;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: grey 1px;
+
+  border-radius: 15px;
   box-shadow: black 5px 5px 5px 5px;
   /* background: rgb(238, 211, 174);
   background: radial-gradient(

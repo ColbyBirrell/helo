@@ -8,12 +8,21 @@ export default class Post extends Component {
   }
 
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     return (
       <div className="post-main">
-        <img className="img-thumb" src={this.props.post.img} />
+        <img className="img-thumb" src={this.props.post.img} alt="thumb" />
         <div className="post-title">{this.props.post.title}</div>
         <div className="post-content">{this.props.post.author_id}</div>
+        <div className="Delete Post">
+          <button
+            onClick={() => {
+              this.props.deletePost(this.props.post.id);
+            }}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     );
   }

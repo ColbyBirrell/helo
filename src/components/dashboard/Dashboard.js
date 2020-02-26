@@ -32,10 +32,21 @@ export default class Dashboard extends Component {
       .catch(err => console.log(err));
   };
 
+  deletePost = id => {
+    axios
+      .delete(`/api/posts/${id}`)
+      .then(() => {
+        this.getPosts();
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     // console.log(this.props);
     const showAllPosts = this.state.postList.map(element => {
-      return <Post key={element.id} post={element} />;
+      return (
+        <Post key={element.id} post={element} deletePost={this.deletePost} />
+      );
     });
     return (
       <div className="dash-main">

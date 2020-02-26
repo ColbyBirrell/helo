@@ -43,3 +43,4 @@ app.post(`/auth/login`, authCtrl.login);
 // post endpoints
 app.get(`/api/posts`, ctrl.getPosts);
 app.post(`/api/posts`, ctrl.createPost);
+app.delete(`/api/posts/:id`, ctrl.deletePost);
