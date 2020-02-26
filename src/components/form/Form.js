@@ -50,7 +50,7 @@ class Form extends Component {
       <div className="form-body">
         <div className="form-main">
           Create a New Post
-          <img className="img-form" src={this.state.img} />
+          <img className="img-form" src={this.state.img} alt="" />
           <div className="form-inputs">
             <input
               name="postTitle"
