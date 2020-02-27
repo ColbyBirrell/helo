@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { logout } from "../../ducks/reducer";
 import "./nav.css";
 
 class Nav extends Component {
@@ -25,7 +26,7 @@ class Nav extends Component {
           <button>New Post</button>
         </Link>
         <Link to="/">
-          <button>Logout</button>
+          <button onClick={logout}>Logout</button>
         </Link>
       </div>
     );
@@ -37,4 +38,4 @@ const mapStateToProps = reduxState => {
   return { user };
 };
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps, { logout })(Nav);
